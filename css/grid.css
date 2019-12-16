@@ -1,0 +1,95 @@
+/*---Vanlig grid.css!---*/
+.container{
+  display: grid;
+  grid-template-columns:repeat(12, 1fr);
+  grid-auto-rows: minmax(50px, auto);
+  grid-gap: 2px;
+}
+
+header{
+  grid-column: 1/-1;
+  grid-row: 1/3;
+}
+h1{
+  grid-column: 1/-1;
+  grid-row: 2/3;
+  justify-self: center;
+}
+#logga{
+  grid-column: 6/10;
+  grid-row: 1/2;
+}
+.topnav{
+  grid-column: 10/13;
+  grid-row: 1/2;
+  text-align: center;
+}
+.left{
+  grid-column: 1/3;
+}
+section{
+  grid-column: 3/-1;
+}
+footer{
+  grid-column: 1/-1;
+}
+
+  @media screen and (max-width: 600px){
+    .left{
+      grid-column: 1/-1;
+      text-align: center;
+    }
+    section{
+      grid-column: 1/-1;
+    }
+  }
+
+
+/*
+   Går också att skriva:
+    grid-column: 1 / -1
+    grid-column: 1 / span 12
+*/
+
+/* Media querys:
+
+@media screen and (max-width:600){
+  nav{
+    grid-column: 1/-1
+  }
+  section{
+    grid-column: 1/-1
+  }
+}
+*/
+
+
+/*
+---TEMPLATE AREAS---
+.container {
+  display: grid;
+  height: 100%;
+  grid-gap: 3px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 50px auto 50px;
+  grid-template-areas:
+  "h h h h h h h h h h h h"
+  "n s s s s s s s s s s s"
+  "f f f f f f f f f f f f";
+}
+
+header{
+  grid-area: h;
+}
+
+nav{
+  grid-area: n;
+}
+
+section{
+  grid-area: s;
+}
+
+footer{
+  grid-area: f;
+}
